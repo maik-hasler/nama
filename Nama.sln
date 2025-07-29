@@ -2,6 +2,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nama", "src\Nama\Nama.csproj", "{D0E419A5-C477-43E1-ABFE-84D441F5C1AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nama.Test", "tests\Nama.Test\Nama.Test.csproj", "{9EFE8ADA-A7BF-4196-9201-38A42B3E1439}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F76EBEB5-2B1B-4479-9E9D-57749B92E4E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{80DFB7DB-0555-47B3-9D9A-94F2F89D5308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nama.Test.Shared", "tests\Nama.Test.Shared\Nama.Test.Shared.csproj", "{96A72AFD-C760-49C8-8F59-DFA2F3226209}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +20,18 @@ Global
 		{D0E419A5-C477-43E1-ABFE-84D441F5C1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E419A5-C477-43E1-ABFE-84D441F5C1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0E419A5-C477-43E1-ABFE-84D441F5C1AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EFE8ADA-A7BF-4196-9201-38A42B3E1439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EFE8ADA-A7BF-4196-9201-38A42B3E1439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EFE8ADA-A7BF-4196-9201-38A42B3E1439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EFE8ADA-A7BF-4196-9201-38A42B3E1439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96A72AFD-C760-49C8-8F59-DFA2F3226209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96A72AFD-C760-49C8-8F59-DFA2F3226209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96A72AFD-C760-49C8-8F59-DFA2F3226209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96A72AFD-C760-49C8-8F59-DFA2F3226209}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D0E419A5-C477-43E1-ABFE-84D441F5C1AE} = {F76EBEB5-2B1B-4479-9E9D-57749B92E4E4}
+		{9EFE8ADA-A7BF-4196-9201-38A42B3E1439} = {80DFB7DB-0555-47B3-9D9A-94F2F89D5308}
+		{96A72AFD-C760-49C8-8F59-DFA2F3226209} = {80DFB7DB-0555-47B3-9D9A-94F2F89D5308}
 	EndGlobalSection
 EndGlobal
