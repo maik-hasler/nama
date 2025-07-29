@@ -11,6 +11,7 @@ public static class ServiceCollectionExtensions
         Assembly assembly)
     {
         services.AddTransient<ISender, Sender>();
+        services.AddTransient<IPublisher, Publisher>();
         
         var types = assembly.GetTypes();
         
@@ -28,6 +29,27 @@ public static class ServiceCollectionExtensions
             .ToList();
 
         foreach (var handler in handlers)
+        {
+            foreach (var interfaceType in handler.InterfaceTypes)
+            {
+                services.AddScoped(interfaceType, handler.ImplementationType);
+            }
+        }
+        
+        var notificationHandlers = types
+            .Where(type => type is { IsClass: true, IsAbstract: false })
+            .Select(type => new
+            {
+                ImplementationType = type,
+                InterfaceTypes = type
+                    .GetInterfaces()
+                    .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(INotificationHandler<>))
+                    .ToList()
+            })
+            .Where(entry => entry.InterfaceTypes.Count > 0)
+            .ToList();
+
+        foreach (var handler in notificationHandlers)
         {
             foreach (var interfaceType in handler.InterfaceTypes)
             {
