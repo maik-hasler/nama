@@ -6,7 +6,7 @@ namespace Nama;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddName(
+    public static IServiceCollection AddNama(
         this IServiceCollection services,
         Assembly assembly)
     {
