@@ -3,11 +3,15 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Nama.Internal;
 
-internal sealed class Sender(IServiceProvider serviceProvider) : ISender
+internal sealed class Sender(
+    IServiceProvider serviceProvider)
+    : ISender
 {
     private static readonly ConcurrentDictionary<Type, HandlerWrapper> HandlerWrapperCache = new();
     
-    public async Task<TResponse> Send<TRequest, TResponse>(TRequest request, CancellationToken cancellationToken)
+    public async Task<TResponse> Send<TResponse>(
+        IRequest<TResponse> request,
+        CancellationToken cancellationToken = default)
     {
         var requestType = request.GetType();
 

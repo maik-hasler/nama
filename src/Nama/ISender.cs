@@ -2,5 +2,7 @@
 
 public interface ISender
 {
-    Task<TResponse> Send<TRequest, TResponse>(TRequest request, CancellationToken cancellationToken);
+    Task<TResponse> Send<TResponse>(
+        IRequest<TResponse> request,
+        CancellationToken cancellationToken = default);
 }
