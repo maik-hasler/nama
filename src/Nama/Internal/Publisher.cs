@@ -13,7 +13,7 @@ internal sealed class Publisher(
 
     public async Task Publish(
         INotification notification,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken = default)
     {
         var domainEventType = notification.GetType();
 
